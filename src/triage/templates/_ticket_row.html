@@ -1,0 +1,29 @@
+<tr{% if fresh %} class="fresh"{% endif %}>
+  <td><a href="/api/tickets/{{ ticket.id }}">{{ ticket.id }}</a></td>
+  <td>
+    <span class="badge route-{{ ticket.route }}">{{ ticket.route }}</span>
+    {% if ticket.audit %}<span class="badge audit">audit</span>{% endif %}
+    {% if ticket.reviewed_at %}
+      {% set right = ticket.category == ticket.reviewed_category and ticket.urgency_level == ticket.reviewed_urgency_level %}
+      <span class="{{ 'ok' if right else 'wrong' }}" title="reviewed: {{ ticket.reviewed_category }}, {{ ticket.reviewed_urgency_level }}">{{ "✓" if right else "✗" }}</span>
+    {% endif %}
+  </td>
+  <td class="subject">
+    {{ ticket.subject }}
+    <div class="reason">{{ ticket.route_reason }}</div>
+  </td>
+  <td>
+    {{ ticket.category or "–" }}
+    {% if ticket.category_confidence is not none %}<div class="conf">{{ "%.2f"|format(ticket.category_confidence) }}</div>{% endif %}
+  </td>
+  <td>
+    {{ ticket.urgency_level or "–" }}
+    {% if ticket.urgency_confidence is not none %}<div class="conf">{{ "%.2f"|format(ticket.urgency_confidence) }}</div>{% endif %}
+  </td>
+  <td>
+    {% if ticket.churn_probability is none %}–
+    {% elif ticket.at_risk %}<span class="risk">at risk</span> <span class="conf">{{ "%.2f"|format(ticket.churn_probability) }}</span>
+    {% else %}<span class="conf">{{ "%.2f"|format(ticket.churn_probability) }}</span>{% endif %}
+  </td>
+  <td class="conf">{{ "%.0f"|format(ticket.decision.latency_ms) }} ms</td>
+</tr>

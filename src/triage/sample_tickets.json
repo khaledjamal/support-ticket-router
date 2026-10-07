@@ -1,0 +1,18 @@
+[
+  {"subject": "Charged twice this month", "body": "My credit card was charged twice for the subscription this month. Please refund the duplicate payment.", "customer": "ada@example.com"},
+  {"subject": "Whole team is down", "body": "The dashboard has been down for an hour with a 500 error. This is an outage for our whole company, many users can't work.", "customer": "ops@acme.example"},
+  {"subject": "Can't log in", "body": "I reset my password but the login still fails and the two-factor code is never accepted.", "customer": "sam@example.com"},
+  {"subject": "Where is my order?", "body": "My order shipped a week ago but the tracking hasn't updated and the package is missing.", "customer": "lee@example.com"},
+  {"subject": "Dark mode please", "body": "Feature request: a dark mode would be great. Just a suggestion, love the product otherwise!", "customer": "kim@example.com"},
+  {"subject": "Cancelling", "body": "I'm angry and frustrated. I was charged again after I asked you to stop. I'm going to cancel and switch to a competitor.", "customer": "max@example.com"},
+  {"subject": "Question", "body": "Hi, quick question about something I noticed earlier today.", "customer": null},
+  {"subject": "Export crashes", "body": "Every time I export a report the app crashes with an error. It blocks my work and I need it fixed today.", "customer": "ana@example.com"},
+  {"subject": "Invoice address", "body": "Can you update the company address on our invoices? No rush.", "customer": "finance@acme.example"},
+  {"subject": "Possible security breach", "body": "We see logins from unknown countries on admin accounts. Possible security breach, please investigate immediately.", "customer": "sec@acme.example"},
+  {"subject": "Thanks!", "body": "Just wanted to say the new release is great, a big compliment to the team.", "customer": "joe@example.com"},
+  {"subject": "Slow", "body": "Things feel slow.", "customer": null},
+  {"subject": "Box arrived damaged", "body": "The package was delivered but the box was damaged and one item is missing from the shipment.", "customer": "ivy@example.com"},
+  {"subject": "Add a teammate", "body": "How do I add another user to our account and give them admin permissions?", "customer": "pat@example.com"},
+  {"subject": "Refund still not received", "body": "I asked for a refund two weeks ago and nothing yet. I'm frustrated and thinking about leaving.", "customer": "rob@example.com"},
+  {"subject": "API integration error", "body": "Our integration gets an error from the webhook since yesterday. Workaround available by polling, but please fix this week.", "customer": "dev@acme.example"}
+]

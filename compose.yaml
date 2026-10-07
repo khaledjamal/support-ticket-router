@@ -1,0 +1,14 @@
+services:
+  triage:
+    build: .
+    image: support-ticket-router:latest
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - triage-data:/data
+
+volumes:
+  triage-data:

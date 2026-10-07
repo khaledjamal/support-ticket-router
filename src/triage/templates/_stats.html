@@ -1,0 +1,24 @@
+<div class="stats">
+  <div class="panel stat"><div class="value">{{ stats.total }}</div><div class="label">tickets</div></div>
+  <div class="panel stat">
+    <div class="value">{{ "%.0f%%"|format(stats.automation_rate * 100) if stats.automation_rate is not none else "–" }}</div>
+    <div class="label">automated</div>
+  </div>
+  {% for route, count in stats.by_route.items() %}
+  <div class="panel stat"><div class="value">{{ count }}</div><div class="label"><span class="badge route-{{ route.value }}">{{ route.value }}</span></div></div>
+  {% endfor %}
+  <div class="panel stat">
+    <div class="value">{{ "%.0f"|format(stats.latency_p95_ms) if stats.latency_p95_ms is not none else "–" }}<small class="muted"> ms</small></div>
+    <div class="label">p95 latency</div>
+  </div>
+  <div class="panel stat"><div class="value">{{ stats.errors }}</div><div class="label">engine errors</div></div>
+  <a class="panel stat" href="/review"><div class="value">{{ stats.pending_review }}</div><div class="label">to review</div></a>
+  {% set audited = stats.accuracy["auto"] %}
+  <div class="panel stat" title="Share of randomly audited AUTO tickets where both category and urgency were right">
+    <div class="value">
+      {%- if audited.reviewed %}{{ "%.0f%%"|format(100 * audited.both_correct / audited.reviewed) }}<small class="muted"> of {{ audited.reviewed }}</small>
+      {%- else %}–{% endif -%}
+    </div>
+    <div class="label">audited accuracy</div>
+  </div>
+</div>

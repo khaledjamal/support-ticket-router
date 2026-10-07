@@ -1,0 +1,9 @@
+{% set category_ok = ticket.category == ticket.reviewed_category %}
+{% set urgency_ok = ticket.urgency_level == ticket.reviewed_urgency_level %}
+<article class="panel review-card reviewed">
+  <span class="muted">#{{ ticket.id }} {{ ticket.subject }} · reviewed:</span>
+  category <strong class="{{ 'ok' if category_ok else 'wrong' }}">{{ ticket.reviewed_category }}</strong>
+  {%- if not category_ok %} <span class="muted">(Jev said {{ ticket.category or "nothing" }})</span>{% endif %},
+  urgency <strong class="{{ 'ok' if urgency_ok else 'wrong' }}">{{ ticket.reviewed_urgency_level }}</strong>
+  {%- if not urgency_ok %} <span class="muted">(Jev said {{ ticket.urgency_level or "nothing" }})</span>{% endif %}
+</article>

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<header>
+  <h1>Support Ticket Router</h1>
+  <span class="muted">
+    backend <strong>{{ engine.backend }}</strong> ·
+    {{ engine.policy.describe() }} ·
+    <a href="/review">review queue</a> ·
+    <a href="/docs">API docs</a>
+  </span>
+</header>
+
+<div id="stats" hx-get="/ui/stats" hx-trigger="ticket-created from:body" hx-swap="innerHTML">
+  {% include "_stats.html" %}
+</div>
+
+<div class="grid">
+  <section class="panel">
+    <h2>New ticket</h2>
+    <form method="post" action="/ui/tickets"
+          hx-post="/ui/tickets" hx-target="#ticket-rows" hx-swap="afterbegin"
+          hx-disabled-elt="find button" hx-on::after-request="if (event.detail.successful) this.reset()">
+      <label for="subject">Subject</label>
+      <input id="subject" name="subject" required maxlength="200" placeholder="Charged twice this month">
+      <label for="body">Message</label>
+      <textarea id="body" name="body" required maxlength="10000"
+                placeholder="My credit card was charged twice for the subscription. Please refund one of the payments."></textarea>
+      <label for="customer">Customer <span class="muted">(optional)</span></label>
+      <input id="customer" name="customer" maxlength="200" placeholder="ada@example.com">
+      <button type="submit">Triage</button>
+    </form>
+  </section>
+
+  <section class="panel">
+    <h2>Recent tickets</h2>
+    <nav class="filters">
+      <a href="/" class="{{ 'on' if not route_filter }}">all</a>
+      {% for r in routes %}
+      <a href="/?route={{ r.value }}" class="{{ 'on' if route_filter == r }}">{{ r.value }}</a>
+      {% endfor %}
+    </nav>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>#</th><th>Route</th><th>Subject</th><th>Category</th><th>Urgency</th><th>Churn</th><th>Latency</th></tr>
+        </thead>
+        <tbody id="ticket-rows">
+          {% for ticket in tickets %}{% include "_ticket_row.html" %}{% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% if not tickets %}<p class="muted">No tickets yet. Submit one, or run <code>uv run triage-seed</code>.</p>{% endif %}
+  </section>
+</div>
+{% endblock %}

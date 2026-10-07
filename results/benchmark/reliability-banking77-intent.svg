@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 310" width="900" height="310" role="img" aria-label="Calibration, Banking77: intent">
+<title>Calibration, Banking77: intent</title>
+<style>
+  .surface { fill: #fcfcfb; }
+  .title { fill: #0b0b0b; font: 600 13px system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .sub, .tick { fill: #52514e; font: 11px system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .tick { font-variant-numeric: tabular-nums; }
+  .axis-label { fill: #898781; font: 11px system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .grid { stroke: #e1e0d9; stroke-width: 1; }
+  .frame { stroke: #c3c2b7; stroke-width: 1; fill: none; }
+  .ideal { stroke: #898781; stroke-width: 1.5; stroke-dasharray: 4 4; }
+  .series { stroke: #2a78d6; stroke-width: 2; fill: none; }
+  .dot { fill: #2a78d6; stroke: #fcfcfb; stroke-width: 2; }
+  .dot.sparse { fill: #fcfcfb; stroke: #2a78d6; stroke-width: 1.5; }
+  @media (prefers-color-scheme: dark) {
+    .surface { fill: #1a1a19; }
+    .title { fill: #ffffff; }
+    .sub, .tick { fill: #c3c2b7; }
+    .grid { stroke: #2c2c2a; }
+    .frame { stroke: #383835; }
+    .series { stroke: #3987e5; }
+    .dot { fill: #3987e5; stroke: #1a1a19; }
+    .dot.sparse { fill: #1a1a19; stroke: #3987e5; }
+  }
+</style>
+<rect class="surface" width="900" height="310" rx="8"/>
+<text class="title" x="16" y="24">Calibration, Banking77: intent</text>
+<text class="sub" x="16" y="42">Dashed line: perfectly calibrated. Below it: right less often than claimed.</text>
+<text class="sub" x="16" y="57">Dot area: number of answers; hollow dots: fewer than 5.</text>
+<text class="title" x="44" y="76">Jev 1.13</text>
+<text class="sub" x="44" y="91">accuracy 79% · ECE 10%</text>
+<line class="grid" x1="128.0" y1="98" x2="128.0" y2="266"/>
+<line class="grid" x1="44" y1="182.0" x2="212" y2="182.0"/>
+<rect class="frame" x="44" y="98" width="168" height="168"/>
+<line class="ideal" x1="44" y1="266" x2="212" y2="98"/>
+<text class="tick" x="44" y="280" text-anchor="middle">0%</text>
+<text class="tick" x="38" y="270" text-anchor="end">0%</text>
+<text class="tick" x="128.0" y="280" text-anchor="middle">50%</text>
+<text class="tick" x="38" y="186.0" text-anchor="end">50%</text>
+<text class="tick" x="212" y="280" text-anchor="middle">100%</text>
+<text class="tick" x="38" y="102" text-anchor="end">100%</text>
+<text class="axis-label" x="128.0" y="296" text-anchor="middle">stated confidence</text>
+<text class="axis-label" x="10" y="182.0" text-anchor="middle" transform="rotate(-90 10 182.0)">accuracy</text>
+<polyline class="series" points="107.4,194.0 120.8,216.6 136.6,177.6 152.2,190.7 168.8,156.4 186.6,154.0 209.1,116.4"/>
+<circle class="dot" cx="107.4" cy="194.0" r="4.7"><title>Jev 1.13: 7 answers stated 30–40% confidence (mean 38%) and were right 43% of the time</title></circle>
+<circle class="dot" cx="120.8" cy="216.6" r="5.2"><title>Jev 1.13: 17 answers stated 40–50% confidence (mean 46%) and were right 29% of the time</title></circle>
+<circle class="dot" cx="136.6" cy="177.6" r="5.2"><title>Jev 1.13: 19 answers stated 50–60% confidence (mean 55%) and were right 53% of the time</title></circle>
+<circle class="dot" cx="152.2" cy="190.7" r="5.5"><title>Jev 1.13: 29 answers stated 60–70% confidence (mean 64%) and were right 45% of the time</title></circle>
+<circle class="dot" cx="168.8" cy="156.4" r="5.3"><title>Jev 1.13: 23 answers stated 70–80% confidence (mean 74%) and were right 65% of the time</title></circle>
+<circle class="dot" cx="186.6" cy="154.0" r="5.5"><title>Jev 1.13: 30 answers stated 80–90% confidence (mean 85%) and were right 67% of the time</title></circle>
+<circle class="dot" cx="209.1" cy="116.4" r="9.1"><title>Jev 1.13: 337 answers stated 90–100% confidence (mean 98%) and were right 89% of the time</title></circle>
+<text class="title" x="268" y="76">GPT-4.1 mini</text>
+<text class="sub" x="268" y="91">accuracy 76% · ECE 18%</text>
+<line class="grid" x1="352.0" y1="98" x2="352.0" y2="266"/>
+<line class="grid" x1="268" y1="182.0" x2="436" y2="182.0"/>
+<rect class="frame" x="268" y="98" width="168" height="168"/>
+<line class="ideal" x1="268" y1="266" x2="436" y2="98"/>
+<text class="tick" x="268" y="280" text-anchor="middle">0%</text>
+<text class="tick" x="352.0" y="280" text-anchor="middle">50%</text>
+<text class="tick" x="436" y="280" text-anchor="middle">100%</text>
+<text class="axis-label" x="352.0" y="296" text-anchor="middle">stated confidence</text>
+<polyline class="series" points="410.8,204.9 427.1,132.1"/>
+<circle class="dot sparse" cx="335.2" cy="266.0" r="4.3"><title>GPT-4.1 mini: 1 answers stated 40–50% confidence (mean 40%) and were right 0% of the time</title></circle>
+<circle class="dot sparse" cx="368.8" cy="266.0" r="4.3"><title>GPT-4.1 mini: 1 answers stated 60–70% confidence (mean 60%) and were right 0% of the time</title></circle>
+<circle class="dot sparse" cx="385.6" cy="210.0" r="4.5"><title>GPT-4.1 mini: 3 answers stated 70–80% confidence (mean 70%) and were right 33% of the time</title></circle>
+<circle class="dot" cx="410.8" cy="204.9" r="5.6"><title>GPT-4.1 mini: 33 answers stated 80–90% confidence (mean 85%) and were right 36% of the time</title></circle>
+<circle class="dot" cx="427.1" cy="132.1" r="9.8"><title>GPT-4.1 mini: 424 answers stated 90–100% confidence (mean 95%) and were right 80% of the time</title></circle>
+<text class="title" x="492" y="76">Claude Haiku 4.5</text>
+<text class="sub" x="492" y="91">accuracy 75% · ECE 11%</text>
+<line class="grid" x1="576.0" y1="98" x2="576.0" y2="266"/>
+<line class="grid" x1="492" y1="182.0" x2="660" y2="182.0"/>
+<rect class="frame" x="492" y="98" width="168" height="168"/>
+<line class="ideal" x1="492" y1="266" x2="660" y2="98"/>
+<text class="tick" x="492" y="280" text-anchor="middle">0%</text>
+<text class="tick" x="576.0" y="280" text-anchor="middle">50%</text>
+<text class="tick" x="660" y="280" text-anchor="middle">100%</text>
+<text class="axis-label" x="576.0" y="296" text-anchor="middle">stated confidence</text>
+<polyline class="series" points="567.6,212.2 617.8,178.3 634.8,145.5 650.2,116.4"/>
+<circle class="dot sparse" cx="550.8" cy="182.0" r="4.4"><title>Claude Haiku 4.5: 2 answers stated 30–40% confidence (mean 35%) and were right 50% of the time</title></circle>
+<circle class="dot" cx="567.6" cy="212.2" r="5.4"><title>Claude Haiku 4.5: 25 answers stated 40–50% confidence (mean 45%) and were right 32% of the time</title></circle>
+<circle class="dot" cx="617.8" cy="178.3" r="6.7"><title>Claude Haiku 4.5: 90 answers stated 70–80% confidence (mean 75%) and were right 52% of the time</title></circle>
+<circle class="dot" cx="634.8" cy="145.5" r="6.8"><title>Claude Haiku 4.5: 99 answers stated 80–90% confidence (mean 85%) and were right 72% of the time</title></circle>
+<circle class="dot" cx="650.2" cy="116.4" r="8.4"><title>Claude Haiku 4.5: 246 answers stated 90–100% confidence (mean 94%) and were right 89% of the time</title></circle>
+<text class="title" x="716" y="76">Gemini 2.5 Flash</text>
+<text class="sub" x="716" y="91">accuracy 77% · ECE 21%</text>
+<line class="grid" x1="800.0" y1="98" x2="800.0" y2="266"/>
+<line class="grid" x1="716" y1="182.0" x2="884" y2="182.0"/>
+<rect class="frame" x="716" y="98" width="168" height="168"/>
+<line class="ideal" x1="716" y1="266" x2="884" y2="98"/>
+<text class="tick" x="716" y="280" text-anchor="middle">0%</text>
+<text class="tick" x="800.0" y="280" text-anchor="middle">50%</text>
+<text class="tick" x="884" y="280" text-anchor="middle">100%</text>
+<text class="axis-label" x="800.0" y="296" text-anchor="middle">stated confidence</text>
+<circle class="dot sparse" cx="800.0" cy="266.0" r="4.3"><title>Gemini 2.5 Flash: 1 answers stated 50–60% confidence (mean 50%) and were right 0% of the time</title></circle>
+<circle class="dot" cx="881.0" cy="135.9" r="10.0"><title>Gemini 2.5 Flash: 461 answers stated 90–100% confidence (mean 98%) and were right 77% of the time</title></circle>
+</svg>

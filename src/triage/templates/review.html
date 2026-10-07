@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Review · Support Ticket Router{% endblock %}
+{% block content %}
+<header>
+  <h1>Review queue</h1>
+  <span class="muted">
+    {{ tickets|length }} waiting ·
+    <a href="/">dashboard</a>
+  </span>
+</header>
+
+<p class="muted intro">
+  Jev's answers are pre-filled. Change anything that's wrong, then save. Audited tickets were handled
+  automatically and picked at random, so their reviews measure how accurate automation really is.
+</p>
+
+{% for ticket in tickets %}
+<article class="panel review-card">
+  <div class="review-head">
+    <span class="badge route-{{ ticket.route }}">{{ ticket.route }}</span>
+    {% if ticket.audit %}<span class="badge audit">audit</span>{% endif %}
+    {% if ticket.at_risk %}<span class="risk">at risk</span>{% endif %}
+    <span class="muted">#{{ ticket.id }} · {{ ticket.route_reason }}</span>
+  </div>
+  <h2>{{ ticket.subject }}</h2>
+  <p class="body">{{ ticket.body }}</p>
+  <form method="post" action="/ui/tickets/{{ ticket.id }}/review"
+        hx-post="/ui/tickets/{{ ticket.id }}/review" hx-target="closest article" hx-swap="outerHTML"
+        hx-disabled-elt="find button">
+    <div class="fields">
+      <label>Category
+        <select name="category">
+          {% for c in categories %}
+          <option value="{{ c }}" {{ "selected" if c == ticket.category }}>{{ c }}</option>
+          {% endfor %}
+        </select>
+        {% if ticket.category_confidence is not none %}<span class="conf">Jev: {{ ticket.category }} · {{ "%.2f"|format(ticket.category_confidence) }}</span>{% endif %}
+      </label>
+      <label>Urgency
+        <select name="urgency_level">
+          {% for u in urgency_levels %}
+          <option value="{{ u }}" {{ "selected" if u == ticket.urgency_level }}>{{ u }}</option>
+          {% endfor %}
+        </select>
+        {% if ticket.urgency_confidence is not none %}<span class="conf">Jev: {{ ticket.urgency_level }} · {{ "%.2f"|format(ticket.urgency_confidence) }}</span>{% endif %}
+      </label>
+      <button type="submit">Save review</button>
+    </div>
+  </form>
+</article>
+{% else %}
+<p class="panel muted">Nothing to review.</p>
+{% endfor %}
+{% endblock %}
